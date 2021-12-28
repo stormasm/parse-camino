@@ -7,7 +7,8 @@ fn main() -> io::Result<()> {
     let f = BufReader::new(f);
 
     for line in f.lines() {
-        println!("{}", line.unwrap());
+        let _x = line.unwrap();
+        //println!("{:?}",x);
     }
 
     Ok(())
