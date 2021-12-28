@@ -4,7 +4,7 @@ use std::io::prelude::*;
 use std::io::{self, BufReader};
 
 fn main() -> io::Result<()> {
-    let f = File::open("/j/tmp99/parse-camino-data/t3.txt")?;
+    let f = File::open("/j/tmp99/parse-camino-data/t1.txt")?;
     let f = BufReader::new(f);
 
     for line in f.lines() {
@@ -23,7 +23,7 @@ fn regex_t1(s1: &str) -> bool {
     //    let re = Regex::new(r"^(?:Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)*$").unwrap();
 
     let re =
-        Regex::new(r"\W*(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)\W*").unwrap();
+        Regex::new(r"(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)\s\d{2}\b").unwrap();
     let val = re.is_match(s1);
     //println!("{:?}", val);
     return val;
