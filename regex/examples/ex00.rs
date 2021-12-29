@@ -4,14 +4,16 @@ use std::io::prelude::*;
 use std::io::{self, BufReader};
 
 fn main() -> io::Result<()> {
-    let f = File::open("/j/tmp99/parse-camino-data/t3.txt")?;
+    let f = File::open("/j/tmp99/parse-camino-data/t1.txt")?;
     let f = BufReader::new(f);
 
     for line in f.lines() {
         let x = line.unwrap();
         let b = regex_day_and_date(&x.clone());
         if b {
-            println!("{:?}", x);
+            println!("date: {:?}", x);
+        } else {
+            println!("entry: {:?}", x);
         }
     }
     Ok(())
