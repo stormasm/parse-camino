@@ -13,7 +13,7 @@ fn main() -> io::Result<()> {
         if b {
             println!("date: {:?}", x);
         } else {
-            println!("entry: {:?}", x);
+            // println!("entry: {:?}", x);
         }
     }
     Ok(())
