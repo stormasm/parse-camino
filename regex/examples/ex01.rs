@@ -4,7 +4,7 @@ use std::io::prelude::*;
 use std::io::{self, BufReader};
 
 fn main() -> io::Result<()> {
-    let f = File::open("/j/tmp99/parse-camino-data/t2.txt")?;
+    let f = File::open("./../../parse-camino-data/t1.txt")?;
     let f = BufReader::new(f);
 
     for line in f.lines() {
