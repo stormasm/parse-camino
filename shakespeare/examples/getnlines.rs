@@ -17,9 +17,11 @@ fn write_file(filename: String, numoflines: usize) -> std::io::Result<()> {
 
     for (num, line) in file.lines().enumerate() {
         if num < numoflines {
-            let l = line.unwrap();
-            //writeln!(filew, "{} {}\n", num, l).unwrap();
-            writeln!(filew, "{}", l).unwrap();
+            if let 0 = num % 2 {
+                let l = line.unwrap();
+                //writeln!(filew, "{} {}\n", num, l).unwrap();
+                writeln!(filew, "{}", l).unwrap();
+            }
         }
     }
     Ok(())
