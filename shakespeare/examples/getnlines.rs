@@ -15,14 +15,13 @@ use std::io::LineWriter;
 use std::io::Write;
 
 fn read_file_to_buffer2(filename: String, numoflines: usize) -> std::io::Result<()> {
-/*
     let f = File::open(filename).unwrap();
     let file = BufReader::new(&f);
-
-    let path = "lines.txt";
-    let mut output = File::create(path)?;
-    write!(output, "Rust\n💖\nFun")?;
-*/
+    /*
+        let path = "lines.txt";
+        let mut output = File::create(path)?;
+        write!(output, "Rust\n💖\nFun")?;
+    */
     let filew = File::create("tmp.txt")?;
     let mut filew = LineWriter::new(filew);
 
