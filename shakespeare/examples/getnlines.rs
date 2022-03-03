@@ -12,18 +12,20 @@ use std::io::Write;
 fn write_file(filename: String, numoflines: usize) -> std::io::Result<()> {
     let f = File::open(filename).unwrap();
     let file = BufReader::new(&f);
-    let filew = File::create("tmp.txt")?;
+    let filew = File::create("tmp.json")?;
     let mut filew = LineWriter::new(filew);
 
+    writeln!(filew, "[").unwrap();
     for (num, line) in file.lines().enumerate() {
         if num < numoflines {
             if let 1 = num % 2 {
                 let l = line.unwrap();
                 //writeln!(filew, "{} {}\n", num, l).unwrap();
-                writeln!(filew, "{}", l).unwrap();
+                writeln!(filew, "{},", l).unwrap();
             }
         }
     }
+    writeln!(filew, "]").unwrap();
     Ok(())
 }
 
@@ -38,7 +40,7 @@ fn main() {
 
     let nol = numoflines.parse::<usize>().unwrap();
 
-    println!("Writing {} lines of file {} to tmp.txt", nol, filename);
+    println!("Writing {} lines of file {} to tmp.json", nol, filename);
 
     let _ = write_file(filename.to_string(), nol);
 }
