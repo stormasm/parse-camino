@@ -35,12 +35,15 @@ fn main() {
         println!("You need to enter a filename and the number of lines to write out...");
         process::exit(1);
     }
-    let filename = &args[1];
+    let filename_read = &args[1];
     let numoflines = &args[2];
 
     let nol = numoflines.parse::<usize>().unwrap();
 
-    println!("Writing {} lines of file {} to tmp.json", nol, filename);
+    println!(
+        "Writing {} lines of file {} to tmp.json",
+        nol, filename_read
+    );
 
-    let _ = write_file(filename.to_string(), nol);
+    let _ = write_file(filename_read.to_string(), nol);
 }
