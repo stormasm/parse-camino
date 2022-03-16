@@ -17,3 +17,7 @@ seq date -b '2021-01-01' -e '2021-12-31'
 ```
 
 [shakespeare.md](./shakespeare.md)
+
+[shakespeare test csv file](https://github.com/stormasm/nudata/blob/main/csv/shakespeare.csv)
+
+[shakespeare_nu6.csv](https://github.com/stormasm/dataset/tree/main/csv)
